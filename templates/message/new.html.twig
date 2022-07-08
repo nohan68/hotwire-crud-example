@@ -1,0 +1,11 @@
+
+<turbo-frame id="new">
+    <h1>Nouveau Message</h1>
+
+    {{ form_start(newForm, {'action' : path('app_message_new'), 'attr': {'id': 'newForm'} }) }}
+        {{ form_widget(newForm) }}
+    {{ form_end(newForm) }}
+
+
+</turbo-frame>
+

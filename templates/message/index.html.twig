@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Message index{% endblock %}
+
+{% block body %}
+    <h1>Message index</h1>
+
+    {% include 'message/_index.html.twig' %}
+
+
+    <div class="modal" id="newModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ajouter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="newModalBody">
+                        {% include 'message/new.html.twig' %}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="newForm" class="btn btn-primary" data-bs-dismiss="modal">Envoyer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="editModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modifier </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="editModalBody">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="editForm" class="btn btn-primary" data-bs-dismiss="modal">Modifier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <button class="btn btn-primary" href="{{ path('app_message_new') }}" data-bs-toggle="modal" data-bs-target="#newModal"  >Nouveau message</button>
+{% endblock %}

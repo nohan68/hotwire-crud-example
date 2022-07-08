@@ -1,0 +1,13 @@
+<tr id="message{{ message.id }}">
+    <td>{{ message.id }}</td>
+    <td>{{ message.date ? message.date|date('Y-m-d H:i:s') : '' }}</td>
+    <td>{{ message.contenue }}</td>
+    <td>
+        <a href="{{ path('app_message_delete', {'id': message.id}) }}">delete</a>
+
+        <form action="{{ path('app_message_edit', {'id': message.id}) }}">
+            <input class="btn btn-outline-primary" type="submit" data-bs-toggle="modal" data-bs-target="#editModal" value="Edit">
+        </form>
+
+    </td>
+</tr>

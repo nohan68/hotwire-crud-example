@@ -1,0 +1,12 @@
+<turbo-stream action="replace" target="editModalBody">
+    <template>
+        <div id="editModalBody">
+            <h1>Edit Message</h1>
+
+            {{ form_start(form, {'action' : path('app_message_edit', {'id': message.id}), 'attr': {'id': 'editForm'} }) }}
+                {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+
+    </template>
+</turbo-stream>

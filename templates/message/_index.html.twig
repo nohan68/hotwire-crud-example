@@ -1,0 +1,21 @@
+<turbo-frame id="index" >
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Contenue</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody id="messages">
+        {% for message in messages %}
+            {% include 'message/_message.html.twig' %}
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</turbo-frame>
